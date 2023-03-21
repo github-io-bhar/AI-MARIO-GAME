@@ -105,7 +105,7 @@ function game(){
     textAlign(CENTER);
     text("GAME OVER", gameConfig.screenX/2, gameConfig.screenY/2+105);
     textSize(15);
-    text("Press SPACE to Restart", gameConfig.screenX/2, gameConfig.screenY/2+135);
+    text("Reload The Page", gameConfig.screenX/2, gameConfig.screenY/2+135);
     textSize(40);
     text(round(gameConfig.scores),gameConfig.screenX/2,gameConfig.screenY/2-35);
     text("points",gameConfig.screenX/2,gameConfig.screenY/2);
