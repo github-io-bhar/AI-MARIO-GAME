@@ -2,10 +2,8 @@
 /*=================================
 =            Variables            =
 =================================*/
-
 /* main character variabes */
 var mario, bricks,clouds,mountains,enemyMushrooms,pipes,platforms,coins;
-
 /* Control variabes */
 var control={
   up: "UP_ARROW", // 32=spaceBar
@@ -13,33 +11,25 @@ var control={
   right: 'RIGHT_ARROW',
   revive: 32
 }
-
 //Inner game status, which might affect game balance or playability.
 var gameConfig={
-  
   // start, playing, over
   status: "start", 
-  
   // initial lives of mario
   initialLifes: 4,
-
   // character moves speed
   moveSpeed: 5,
   enemyMoveSpeed: 1,
-
   // gravity and jump speed for all the characters
   gravity: 1,
   gravityEnemy: 10,
   jump:-15,
-
   // character starting point
   startingPointX: 500,
   startingPointY: 0,
-
   // default canvas size
   screenX:1240,
   screenY:336,
-
   // scores
   timeScores: 0,
   scores: 0
@@ -285,13 +275,13 @@ function autoControl(character){
 function manualControl(character){
   
   if(character.live){
-    if(noseX < 300){
+    if(noseX > 300){
       character.velocity.x-=gameConfig.moveSpeed;
       character.changeAnimation('move');
       character.mirrorX(-1);
     }
 
-    if(noseX > 300){
+    if(noseX < 300){
       character.velocity.x+=gameConfig.moveSpeed;
       character.changeAnimation('move');
       character.mirrorX(1);
@@ -306,7 +296,7 @@ function manualControl(character){
 
 /* Movements of character */
 function jumping(character){
-	if( (noseY < 200&&character.live) || (touchIsDown&&character.live) ){
+	if( (noseY < 200 && character.live) || (touchIsDown&&character.live) ){
     mario_jump.play();
 		character.velocity.y+=gameConfig.jump;
 	}

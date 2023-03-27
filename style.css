@@ -35,4 +35,6 @@ video{
     background-size: cover;
     background-position: center;
     padding: 25px;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }

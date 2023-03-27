@@ -1,3 +1,6 @@
+var world_start, mario_jump, mario_coin, mario_gameover, mario_kick, mario_die;
+var canvas, video, poseNet;
+var noseX
 function preload() {
 	world_start = loadSound("world_start.wav");
 	mario_jump = loadSound("jump.wav");
@@ -9,7 +12,7 @@ function preload() {
 	MarioAnimation();
 }
 function setup() {
-	canvas = createCanvas(1240,336);
+	canvas = createCanvas(1240, 336);
 	canvas.parent('canvas');
 	instializeInSetup(mario);
 	video = createCapture(VIDEO);
